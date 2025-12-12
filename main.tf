@@ -18,11 +18,12 @@ provider "docker" {
 }
 
 resource "docker_image" "trackerapp" {
-  name = "registry-1.docker.io/antondinkov/trackerapp123:1.0"
+  name = "registry-1.docker.io/antondinkov/trackerapp123"
 
   build {
     context    = "${path.module}"
     dockerfile = "${path.module}/Dockerfile"
+    tag = "1.0"
   }
 }
 
